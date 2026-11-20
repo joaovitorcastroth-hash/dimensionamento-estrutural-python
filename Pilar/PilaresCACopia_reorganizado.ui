@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1880</width>
+    <height>904</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>951</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Dimensionamento de pilar — NBR 6118 (eixos e momentos: convenção fixa; armadura simétrica)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_referencia">
+    <property name="geometry">
+     <rect>
+      <x>1500</x>
+      <y>10</y>
+      <width>280</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ver diagramas de referência</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gb_referencia">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>1780</width>
+      <height>230</height>
+     </rect>
+    </property>
+    <property name="visible">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Diagramas de referência</string>
+    </property>
+    <layout class="QGridLayout" name="layout_referencia">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="minimumSize">
+        <size>
+         <width>380</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-05-23 161442.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_4">
+       <property name="minimumSize">
+        <size>
+         <width>380</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-05-23 161539.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_32">
+       <property name="minimumSize">
+        <size>
+         <width>380</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-06-23 154434.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_35">
+       <property name="minimumSize">
+        <size>
+         <width>380</width>
+         <height>150</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-06-23 115725.png</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Pilar intermediário</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Pilar de extremidade</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_31">
+       <property name="text">
+        <string>Pilar de canto</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLabel" name="label_37">
+       <property name="text">
+        <string>Pilar de canto- Distribuição de armadura</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="gb_geometria">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>270</y>
+      <width>580</width>
+      <height>260</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>1 — Tipo de pilar e geometria</string>
+    </property>
+    <layout class="QGridLayout" name="layout_geometria">
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>Altura (l-cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_38">
+       <property name="text">
+        <string>Tipo de pilar</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>d' (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>fck concreto</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="fck_conc">
+       <item>
+        <property name="text">
+         <string>20</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>25</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>30</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>35</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>40</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>45</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>50</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="valor_d_linha"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="altura_lexy"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QComboBox" name="pilar_tipo">
+       <property name="minimumSize">
+        <size>
+         <width>130</width>
+         <height>0</height>
+        </size>
+       </property>
+       <item>
+        <property name="text">
+         <string>Intermediário</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Extremidade</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Canto</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Normal (Nk - kN)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLineEdit" name="normal_nk"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Lado lx (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Lado ly (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLineEdit" name="lado_ly"/>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLineEdit" name="lado_lx"/>
+     </item>
+     <item row="4" column="1" rowspan="2">
+      <widget class="QPushButton" name="calcular_pre_lados">
+       <property name="text">
+        <string>Pré para os lados</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>Distribuição da armadura (só pilar de canto)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QComboBox" name="distribuicao_obliqua">
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="gb_momentos">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>580</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>2 — Momentos solicitantes (1ª ordem)</string>
+    </property>
+    <layout class="QGridLayout" name="layout_momentos">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Momento Mx (Mkx - kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Momento My (Mky - kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="momento_mkx"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="momento_mky"/>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="label_34">
+       <property name="text">
+        <string>Para ajuda no cálculo de Momento</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QPushButton" name="calcular_momento_janela">
+       <property name="text">
+        <string>Calcular Momento</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="calcular_prop">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>680</y>
+      <width>580</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Calcular esbeltez, momentos e armadura</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gb_armadura">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>479</y>
+      <width>631</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>4 — Armaduras</string>
+    </property>
+    <layout class="QGridLayout" name="layout_armadura">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_28">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Eixo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_24">
+       <property name="text">
+        <string>Armadura A's</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string>Armadura As</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_43">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="as_sim_x"/>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLineEdit" name="as_sim_x2"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_29">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="as_sim_y"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="as_sim_y2"/>
+     </item>
+     <item row="3" column="0" colspan="3">
+      <widget class="Line" name="line_diametro">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_33">
+       <property name="text">
+        <string>Diâmetro (mm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="barra">
+       <item>
+        <property name="text">
+         <string>6.3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12.5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>20</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="numero_barras_botao">
+       <property name="text">
+        <string>Número de barras (cada lado)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lbl_resultado_barras">
+       <property name="text">
+        <string>Resultado:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1" colspan="2">
+      <widget class="QLineEdit" name="numero_barras"/>
+     </item>
+     <item row="6" column="0" colspan="3">
+      <widget class="Line" name="line_detalhes">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0" colspan="3">
+      <widget class="QLabel" name="lbl_detalhes">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Detalhes do dimensionamento</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0" colspan="3">
+      <widget class="QLineEdit" name="info_1"/>
+     </item>
+     <item row="9" column="0" colspan="3">
+      <widget class="QLineEdit" name="info_2"/>
+     </item>
+     <item row="10" column="0" colspan="3">
+      <widget class="QLineEdit" name="info_3"/>
+     </item>
+     <item row="11" column="0" colspan="3">
+      <widget class="QLineEdit" name="info_4"/>
+     </item>
+     <item row="12" column="0" colspan="3">
+      <widget class="QLineEdit" name="info_5"/>
+     </item>
+     <item row="13" column="0" colspan="3">
+      <widget class="QLineEdit" name="info_6"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>300</y>
+      <width>1011</width>
+      <height>175</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="esbeltez_x">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLabel" name="label_18">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string> M de 2° grau </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_22">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Eixo </string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="4">
+      <widget class="QLineEdit" name="momento_mx_total"/>
+     </item>
+     <item row="8" column="4">
+      <widget class="QLineEdit" name="momento_my_total"/>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLineEdit" name="mx_segundo_grau"/>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_23">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Y</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_16">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string> M minimo </string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLineEdit" name="excentricidade_y"/>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="excentricidade_x"/>
+     </item>
+     <item row="8" column="3">
+      <widget class="QLineEdit" name="my_segundo_grau"/>
+     </item>
+     <item row="8" column="2">
+      <widget class="QLineEdit" name="my_minimo"/>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLineEdit" name="mx_minimo"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_41">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="label_21">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string> M total considerado:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="esbeltez_y"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_15">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string>                                          Esbeltez                             </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_40">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>250</y>
+      <width>381</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>3 — Esbeltez e momentos por eixo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>160</y>
+      <width>201</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pilar intermediário</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_39">
+    <property name="geometry">
+     <rect>
+      <x>1260</x>
+      <y>190</y>
+      <width>361</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pilar de canto- Distribuição de armadura</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_36">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>50</y>
+      <width>321</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-06-23 115725.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_42">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>50</y>
+      <width>271</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-06-23 154434.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>40</y>
+      <width>261</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-05-23 161539.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>160</y>
+      <width>241</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pilar de extremidade</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_44">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>160</y>
+      <width>241</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Pilar de canto</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_25">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>261</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-05-23 161442.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1880</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
