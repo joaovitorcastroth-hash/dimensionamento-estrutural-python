@@ -2,7 +2,7 @@ from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtWidgets import QTableWidgetItem
 import math
-
+import recursos_rc
 
 # OBS: Fazer a conferencia de altura util(CG) ----->> CHECK
 # fazer mais uma camada de barras(3a camada) ---->>CHECK

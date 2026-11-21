@@ -3,33 +3,56 @@
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
-   <rect><x>0</x><y>0</y><width>1500</width><height>1000</height></rect>
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>1000</height>
+   </rect>
   </property>
-  <property name="windowTitle"><string>Dimensionamento de Vigas — NBR 6118</string></property>
+  <property name="windowTitle">
+   <string>Dimensionamento de Vigas — NBR 6118</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-
-   <!-- ===== COLUNA ESQUERDA blocos 1-4  x=10 w=480 ===== -->
-
    <widget class="QGroupBox" name="gb_tipo">
     <property name="geometry">
-     <rect><x>10</x><y>10</y><width>480</width><height>130</height></rect>
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>480</width>
+      <height>130</height>
+     </rect>
     </property>
-    <property name="title"><string>1 — Tipo de viga e comprimento</string></property>
+    <property name="title">
+     <string>1 — Tipo de viga e comprimento</string>
+    </property>
     <layout class="QGridLayout" name="layout_tipo">
      <item row="0" column="0">
       <widget class="QLabel" name="label">
-       <property name="text"><string>Tipo de viga</string></property>
+       <property name="text">
+        <string>Tipo de viga</string>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label_3">
-       <property name="text"><string>Comprimento (m)</string></property>
+       <property name="text">
+        <string>Comprimento (m)</string>
+       </property>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QComboBox" name="tipoviga">
-       <item><property name="text"><string>BiApoiada</string></property></item>
-       <item><property name="text"><string>Engastada</string></property></item>
+       <item>
+        <property name="text">
+         <string>BiApoiada</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Engastada</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item row="1" column="1">
@@ -37,12 +60,16 @@
      </item>
      <item row="1" column="2">
       <widget class="QPushButton" name="botaook">
-       <property name="text"><string>OK</string></property>
+       <property name="text">
+        <string>OK</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_2">
-       <property name="text"><string>Tipo selecionado:</string></property>
+       <property name="text">
+        <string>Tipo selecionado:</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="1" colspan="2">
@@ -50,27 +77,45 @@
      </item>
     </layout>
    </widget>
-
    <widget class="QGroupBox" name="gb_momento">
     <property name="geometry">
-     <rect><x>10</x><y>150</y><width>480</width><height>210</height></rect>
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>480</width>
+      <height>210</height>
+     </rect>
     </property>
-    <property name="title"><string>2 — Momento fletor máximo</string></property>
+    <property name="title">
+     <string>2 — Momento fletor máximo</string>
+    </property>
     <layout class="QGridLayout" name="layout_momento">
      <item row="0" column="0">
       <widget class="QLabel" name="label_8">
-       <property name="text"><string>Calcular ou inserir momento?</string></property>
+       <property name="text">
+        <string>Calcular ou inserir momento?</string>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QComboBox" name="tipomomento">
-       <item><property name="text"><string>Inserir</string></property></item>
-       <item><property name="text"><string>Calcular</string></property></item>
+       <item>
+        <property name="text">
+         <string>Inserir</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Calcular</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_9">
-       <property name="text"><string>Inserir momento (kN.cm)</string></property>
+       <property name="text">
+        <string>Inserir momento (kN.cm)</string>
+       </property>
       </widget>
      </item>
      <item row="1" column="1">
@@ -78,12 +123,16 @@
      </item>
      <item row="2" column="0" colspan="2">
       <widget class="QLabel" name="label_4">
-       <property name="text"><string>Cargas da viga (para calcular momento):</string></property>
+       <property name="text">
+        <string>Cargas da viga (para calcular momento):</string>
+       </property>
       </widget>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_5">
-       <property name="text"><string>Distribuída (kN/m)</string></property>
+       <property name="text">
+        <string>Distribuída (kN/m)</string>
+       </property>
       </widget>
      </item>
      <item row="3" column="1">
@@ -91,7 +140,9 @@
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="label_6">
-       <property name="text"><string>Concentrada (kN)</string></property>
+       <property name="text">
+        <string>Concentrada (kN)</string>
+       </property>
       </widget>
      </item>
      <item row="4" column="1">
@@ -99,12 +150,16 @@
      </item>
      <item row="5" column="0" colspan="2">
       <widget class="QPushButton" name="botaocalcular">
-       <property name="text"><string>Calcular momento</string></property>
+       <property name="text">
+        <string>Calcular momento</string>
+       </property>
       </widget>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_7">
-       <property name="text"><string>Mk máximo (kN.cm)</string></property>
+       <property name="text">
+        <string>Mk máximo (kN.cm)</string>
+       </property>
       </widget>
      </item>
      <item row="6" column="1">
@@ -112,26 +167,38 @@
      </item>
     </layout>
    </widget>
-
    <widget class="QGroupBox" name="gb_geom">
     <property name="geometry">
-     <rect><x>10</x><y>370</y><width>480</width><height>280</height></rect>
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>480</width>
+      <height>280</height>
+     </rect>
     </property>
-    <property name="title"><string>3 — Geometria e armadura longitudinal</string></property>
+    <property name="title">
+     <string>3 — Geometria e armadura longitudinal</string>
+    </property>
     <layout class="QGridLayout" name="layout_geom">
      <item row="0" column="0">
       <widget class="QLabel" name="label_13">
-       <property name="text"><string>Largura bw (cm)</string></property>
+       <property name="text">
+        <string>Largura bw (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label_11">
-       <property name="text"><string>Cobrimento (cm)</string></property>
+       <property name="text">
+        <string>Cobrimento (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="0" column="2">
       <widget class="QLabel" name="label_12">
-       <property name="text"><string>fck concreto</string></property>
+       <property name="text">
+        <string>fck concreto</string>
+       </property>
       </widget>
      </item>
      <item row="1" column="0">
@@ -145,17 +212,23 @@
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_18">
-       <property name="text"><string>Altura h (cm)</string></property>
+       <property name="text">
+        <string>Altura h (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="1">
       <widget class="QLabel" name="label_14">
-       <property name="text"><string>Altura útil d (cm)</string></property>
+       <property name="text">
+        <string>Altura útil d (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="2">
       <widget class="QLabel" name="label_17">
-       <property name="text"><string>Diâm. estribo (mm)</string></property>
+       <property name="text">
+        <string>Diâm. estribo (mm)</string>
+       </property>
       </widget>
      </item>
      <item row="3" column="0">
@@ -169,23 +242,30 @@
      </item>
      <item row="4" column="0" colspan="3">
       <widget class="QPushButton" name="armlong">
-       <property name="text"><string>Mostrar (calcular armadura)</string></property>
+       <property name="text">
+        <string>Mostrar (calcular armadura)</string>
+       </property>
       </widget>
      </item>
-     <!-- resultados -->
      <item row="5" column="0">
       <widget class="QLabel" name="label_15">
-       <property name="text"><string>As (cm²)</string></property>
+       <property name="text">
+        <string>As (cm²)</string>
+       </property>
       </widget>
      </item>
      <item row="5" column="1">
       <widget class="QLabel" name="label_20">
-       <property name="text"><string>Kc</string></property>
+       <property name="text">
+        <string>Kc</string>
+       </property>
       </widget>
      </item>
      <item row="5" column="2">
       <widget class="QLabel" name="label_21">
-       <property name="text"><string>Bx = X/D</string></property>
+       <property name="text">
+        <string>Bx = X/D</string>
+       </property>
       </widget>
      </item>
      <item row="6" column="0">
@@ -202,31 +282,65 @@
      </item>
     </layout>
    </widget>
-
    <widget class="QGroupBox" name="gb_barras">
     <property name="geometry">
-     <rect><x>10</x><y>660</y><width>480</width><height>100</height></rect>
+     <rect>
+      <x>10</x>
+      <y>660</y>
+      <width>480</width>
+      <height>100</height>
+     </rect>
     </property>
-    <property name="title"><string>4 — Número de barras (armadura simples)</string></property>
+    <property name="title">
+     <string>4 — Número de barras (armadura simples)</string>
+    </property>
     <layout class="QGridLayout" name="layout_barras">
      <item row="0" column="0">
       <widget class="QLabel" name="label_16">
-       <property name="text"><string>Diâmetro φ das barras (mm)</string></property>
+       <property name="text">
+        <string>Diâmetro φ das barras (mm)</string>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label_19">
-       <property name="text"><string>As total (cm²)</string></property>
+       <property name="text">
+        <string>As total (cm²)</string>
+       </property>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QComboBox" name="barra">
-       <item><property name="text"><string>6.3</string></property></item>
-       <item><property name="text"><string>8</string></property></item>
-       <item><property name="text"><string>10</string></property></item>
-       <item><property name="text"><string>12.5</string></property></item>
-       <item><property name="text"><string>16</string></property></item>
-       <item><property name="text"><string>20</string></property></item>
+       <item>
+        <property name="text">
+         <string>6.3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12.5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>20</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item row="1" column="1">
@@ -234,47 +348,67 @@
      </item>
      <item row="1" column="2">
       <widget class="QPushButton" name="numero_barras">
-       <property name="text"><string>Número de barras</string></property>
+       <property name="text">
+        <string>Número de barras</string>
+       </property>
       </widget>
      </item>
     </layout>
    </widget>
-
-   <!-- ===== COLUNA DIREITA  x=510 ===== -->
-
-   <!-- imagem ST (topo direito) -->
    <widget class="QLabel" name="label_37">
     <property name="geometry">
-     <rect><x>510</x><y>10</y><width>980</width><height>500</height></rect>
+     <rect>
+      <x>510</x>
+      <y>10</y>
+      <width>980</width>
+      <height>500</height>
+     </rect>
     </property>
-    <property name="text"><string/></property>
+    <property name="text">
+     <string/>
+    </property>
     <property name="pixmap">
-     <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-05-19 223014.png</pixmap>
+     <pixmap resource="recursos.qrc">:/imagens/imagens/Captura de tela 2026-05-20 113556.png</pixmap>
     </property>
-    <property name="scaledContents"><bool>true</bool></property>
-    <property name="alignment"><set>Qt::AlignCenter</set></property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
-
-   <!-- Bloco 5: espaçamentos + detalhamento ST -->
    <widget class="QGroupBox" name="gb_espacamentos">
     <property name="geometry">
-     <rect><x>510</x><y>520</y><width>980</width><height>220</height></rect>
+     <rect>
+      <x>510</x>
+      <y>520</y>
+      <width>980</width>
+      <height>220</height>
+     </rect>
     </property>
-    <property name="title"><string>5 — Espaçamentos e detalhamento da ST</string></property>
+    <property name="title">
+     <string>5 — Espaçamentos e detalhamento da ST</string>
+    </property>
     <layout class="QGridLayout" name="layout_espac">
      <item row="0" column="0" colspan="2">
       <widget class="QLabel" name="label_32">
-       <property name="text"><string>Espaçamentos iniciais (modificáveis)</string></property>
+       <property name="text">
+        <string>Espaçamentos iniciais (modificáveis)</string>
+       </property>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QPushButton" name="espacamentos">
-       <property name="text"><string>Mostrar espaçamentos</string></property>
+       <property name="text">
+        <string>Mostrar espaçamentos</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_36">
-       <property name="text"><string>ah (cm)</string></property>
+       <property name="text">
+        <string>ah (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="1">
@@ -282,21 +416,26 @@
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="label_34">
-       <property name="text"><string>av (cm)</string></property>
+       <property name="text">
+        <string>av (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="es_vertical"/>
      </item>
-     <!-- espaçamentos finais -->
      <item row="0" column="2" colspan="2">
       <widget class="QLabel" name="label_35">
-       <property name="text"><string>Espaçamentos finais</string></property>
+       <property name="text">
+        <string>Espaçamentos finais</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="2">
       <widget class="QLabel" name="label_31">
-       <property name="text"><string>ah (cm)</string></property>
+       <property name="text">
+        <string>ah (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="3">
@@ -304,21 +443,26 @@
      </item>
      <item row="3" column="2">
       <widget class="QLabel" name="label_33">
-       <property name="text"><string>av (cm)</string></property>
+       <property name="text">
+        <string>av (cm)</string>
+       </property>
       </widget>
      </item>
      <item row="3" column="3">
       <widget class="QLineEdit" name="es_vertical_final"/>
      </item>
-     <!-- detalhamento ST -->
      <item row="0" column="4" colspan="2">
       <widget class="QLabel" name="label_10">
-       <property name="text"><string>Detalhamento da ST</string></property>
+       <property name="text">
+        <string>Detalhamento da ST</string>
+       </property>
       </widget>
      </item>
      <item row="1" column="4" colspan="2">
       <widget class="QPushButton" name="desenhost">
-       <property name="text"><string>Mostrar (detalhamento ST)</string></property>
+       <property name="text">
+        <string>Mostrar (detalhamento ST)</string>
+       </property>
       </widget>
      </item>
      <item row="2" column="4" colspan="2">
@@ -326,108 +470,231 @@
      </item>
     </layout>
    </widget>
-
-   <!-- ===== BLOCO 6 — ARMADURA DUPLA (largura total, rodapé) ===== -->
    <widget class="QGroupBox" name="gb_dupla">
     <property name="geometry">
-     <rect><x>10</x><y>770</y><width>1480</width><height>210</height></rect>
+     <rect>
+      <x>10</x>
+      <y>770</y>
+      <width>1480</width>
+      <height>210</height>
+     </rect>
     </property>
-    <property name="title"><string>6 — Armadura dupla (somente se indicado no bloco 3)</string></property>
+    <property name="title">
+     <string>6 — Armadura dupla (somente se indicado no bloco 3)</string>
+    </property>
     <layout class="QGridLayout" name="layout_dupla">
      <item row="0" column="0" colspan="2">
       <widget class="QPushButton" name="arm_dupla">
-       <property name="text"><string>Mostrar (calcular armadura dupla)</string></property>
+       <property name="text">
+        <string>Mostrar (calcular armadura dupla)</string>
+       </property>
       </widget>
      </item>
-     <!-- cabeçalhos resultados -->
      <item row="1" column="0">
-      <widget class="QLabel" name="label_23"><property name="text"><string>Kclim</string></property></widget>
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>Kclim</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLabel" name="label_24"><property name="text"><string>Kslim</string></property></widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QLabel" name="label_25"><property name="text"><string>Ks'</string></property></widget>
-     </item>
-     <item row="1" column="3">
-      <widget class="QLabel" name="label_29"><property name="text"><string>Md1 (kN.cm)</string></property></widget>
-     </item>
-     <item row="1" column="4">
-      <widget class="QLabel" name="label_28"><property name="text"><string>Md2 (kN.cm)</string></property></widget>
-     </item>
-     <item row="1" column="5">
-      <widget class="QLabel" name="label_27"><property name="text"><string>As (cm²)</string></property></widget>
-     </item>
-     <item row="1" column="6">
-      <widget class="QLabel" name="label_26"><property name="text"><string>As' (cm²)</string></property></widget>
-     </item>
-     <!-- campos resultado -->
-     <item row="2" column="0"><widget class="QLineEdit" name="kclim"/></item>
-     <item row="2" column="1"><widget class="QLineEdit" name="kslim"/></item>
-     <item row="2" column="2"><widget class="QLineEdit" name="kslinha"/></item>
-     <item row="2" column="3"><widget class="QLineEdit" name="M1d_linha"/></item>
-     <item row="2" column="4"><widget class="QLineEdit" name="M2d_linha"/></item>
-     <item row="2" column="5"><widget class="QLineEdit" name="As_dupla"/></item>
-     <item row="2" column="6"><widget class="QLineEdit" name="As_dupla_linha"/></item>
-     <!-- separador -->
-     <item row="3" column="0" colspan="7">
-      <widget class="Line" name="line_dupla">
-       <property name="orientation"><enum>Qt::Horizontal</enum></property>
+      <widget class="QLabel" name="label_24">
+       <property name="text">
+        <string>Kslim</string>
+       </property>
       </widget>
      </item>
-     <!-- seleção de diâmetros -->
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_25">
+       <property name="text">
+        <string>Ks'</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLabel" name="label_29">
+       <property name="text">
+        <string>Md1 (kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="label_28">
+       <property name="text">
+        <string>Md2 (kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLabel" name="label_27">
+       <property name="text">
+        <string>As (cm²)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string>As' (cm²)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="kclim"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="kslim"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="kslinha"/>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="M1d_linha"/>
+     </item>
+     <item row="2" column="4">
+      <widget class="QLineEdit" name="M2d_linha"/>
+     </item>
+     <item row="2" column="5">
+      <widget class="QLineEdit" name="As_dupla"/>
+     </item>
+     <item row="2" column="6">
+      <widget class="QLineEdit" name="As_dupla_linha"/>
+     </item>
+     <item row="3" column="0" colspan="7">
+      <widget class="Line" name="line_dupla">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
      <item row="4" column="0" colspan="2">
-      <widget class="QLabel" name="label_30"><property name="text"><string>Selecionar diâmetros e calcular n° de barras</string></property></widget>
+      <widget class="QLabel" name="label_30">
+       <property name="text">
+        <string>Selecionar diâmetros e calcular n° de barras</string>
+       </property>
+      </widget>
      </item>
      <item row="4" column="4">
-      <widget class="QLabel" name="lbl_nas"><property name="text"><string>n° barras As</string></property></widget>
+      <widget class="QLabel" name="lbl_nas">
+       <property name="text">
+        <string>n° barras As</string>
+       </property>
+      </widget>
      </item>
      <item row="4" column="5">
-      <widget class="QLabel" name="lbl_naslinha"><property name="text"><string>n° barras As'</string></property></widget>
+      <widget class="QLabel" name="lbl_naslinha">
+       <property name="text">
+        <string>n° barras As'</string>
+       </property>
+      </widget>
      </item>
      <item row="5" column="0">
-      <widget class="QLabel" name="lbl_phi_as"><property name="text"><string>φ As (mm)</string></property></widget>
+      <widget class="QLabel" name="lbl_phi_as">
+       <property name="text">
+        <string>φ As (mm)</string>
+       </property>
+      </widget>
      </item>
      <item row="5" column="1">
       <widget class="QComboBox" name="barra_As">
-       <item><property name="text"><string>6.3</string></property></item>
-       <item><property name="text"><string>8</string></property></item>
-       <item><property name="text"><string>10</string></property></item>
-       <item><property name="text"><string>12.5</string></property></item>
-       <item><property name="text"><string>16</string></property></item>
-       <item><property name="text"><string>20</string></property></item>
+       <item>
+        <property name="text">
+         <string>6.3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12.5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>20</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item row="5" column="2" rowspan="2">
       <widget class="QPushButton" name="calcular_nbarrasdupla">
-       <property name="text"><string>Calcular n° de barras</string></property>
+       <property name="text">
+        <string>Calcular n° de barras</string>
+       </property>
       </widget>
      </item>
-     <item row="5" column="4"><widget class="QLineEdit" name="nAs"/></item>
+     <item row="5" column="4">
+      <widget class="QLineEdit" name="nAs"/>
+     </item>
      <item row="6" column="0">
-      <widget class="QLabel" name="lbl_phi_aslinha"><property name="text"><string>φ As' (mm)</string></property></widget>
+      <widget class="QLabel" name="lbl_phi_aslinha">
+       <property name="text">
+        <string>φ As' (mm)</string>
+       </property>
+      </widget>
      </item>
      <item row="6" column="1">
       <widget class="QComboBox" name="barra_Aslinha">
-       <item><property name="text"><string>6.3</string></property></item>
-       <item><property name="text"><string>8</string></property></item>
-       <item><property name="text"><string>10</string></property></item>
-       <item><property name="text"><string>12.5</string></property></item>
-       <item><property name="text"><string>16</string></property></item>
+       <item>
+        <property name="text">
+         <string>6.3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12.5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </item>
       </widget>
      </item>
-     <item row="6" column="5"><widget class="QLineEdit" name="nAslinha"/></item>
+     <item row="6" column="5">
+      <widget class="QLineEdit" name="nAslinha"/>
+     </item>
     </layout>
    </widget>
-
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
-    <rect><x>0</x><y>0</y><width>1500</width><height>26</height></rect>
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1500</width>
+     <height>26</height>
+    </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>
