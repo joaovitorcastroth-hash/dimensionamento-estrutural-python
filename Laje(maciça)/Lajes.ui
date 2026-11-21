@@ -27,7 +27,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../Pictures/Screenshots/Captura de tela 2026-04-20 214437.png</pixmap>
+     <pixmap resource="recursos.qrc">:/imagem/imagem/Captura de tela 2026-04-20 214437.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -670,6 +670,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>
