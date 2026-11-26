@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1500</width>
+    <height>1163</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dimensionamento de Vigas — NBR 6118</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string>
+QGroupBox { font-weight: bold; border: 1px solid #b8c2cc; border-radius: 6px; margin-top: 14px; padding-top: 6px; }
+QGroupBox::title { subcontrol-origin: margin; left: 10px; padding: 0 4px; color: #1f4e79; }
+QGroupBox QLabel, QGroupBox QLineEdit, QGroupBox QComboBox { font-weight: normal; }
+QLabel[papel=&quot;subtitulo&quot;] { font-weight: bold; color: #37474f; }
+QLineEdit { background: #ffffff; border: 1px solid #9aa5b1; border-radius: 3px; padding: 2px 5px; }
+QLineEdit:focus { border: 1px solid #2f7fd8; }
+QLineEdit[papel=&quot;saida&quot;] { background: #eceff1; color: #1f2d3a; border: 1px solid #cfd8dc; }
+QLineEdit[papel=&quot;editavel&quot;] { background: #fff6d6; border: 1px solid #e0c36a; }
+QComboBox { background: #ffffff; border: 1px solid #9aa5b1; border-radius: 3px; padding: 2px 5px; font-weight: normal; }
+QPushButton { background: #2f7fd8; color: #ffffff; border: none; border-radius: 4px; padding: 4px 12px; min-height: 22px; font-weight: bold; }
+QPushButton:hover { background: #2569b5; }
+QPushButton:pressed { background: #1c548f; }
+QLineEdit:disabled, QComboBox:disabled { background: #f4f4f4; color: #a0a0a0; border: 1px solid #dddddd; }
+QLabel:disabled { color: #a0a0a0; }
+QPushButton:disabled { background: #cfd8dc; color: #78909c; }
+QGroupBox:disabled { color: #a0a0a0; }
+</string>
+   </property>
+   <widget class="QGroupBox" name="gb_tipo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>480</width>
+      <height>135</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>1 — Tipo de viga e comprimento</string>
+    </property>
+    <layout class="QGridLayout" name="layout_tipo" columnstretch="0,1,0,1" columnminimumwidth="110,0,110,0">
+     <property name="horizontalSpacing">
+      <number>8</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Tipo de viga</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Comprimento (m)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="tipoviga">
+       <item>
+        <property name="text">
+         <string>BiApoiada</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Engastada</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="comprimento"/>
+     </item>
+     <item row="1" column="0" colspan="4">
+      <widget class="QPushButton" name="botaook">
+       <property name="text">
+        <string>Confirmar tipo e comprimento</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Confirmado</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="3">
+      <widget class="QLineEdit" name="tipodeviga">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="gb_momento">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>155</y>
+      <width>480</width>
+      <height>240</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>2 — Momento fletor máximo</string>
+    </property>
+    <layout class="QGridLayout" name="layout_momento" columnstretch="0,1">
+     <property name="horizontalSpacing">
+      <number>8</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Origem do momento</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="tipomomento">
+       <item>
+        <property name="text">
+         <string>Inserir</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Calcular</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Momento a inserir (kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="inserirmomento"/>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Cargas (usadas só em &quot;Calcular&quot;)</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>subtitulo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Distribuída (kN/m)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="distribuida"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Concentrada (kN)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="concentrada"/>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QPushButton" name="botaocalcular">
+       <property name="text">
+        <string>Calcular/Confirmar momento</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Mk máximo (kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="momentofletor">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="gb_geom">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>405</y>
+      <width>480</width>
+      <height>250</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>3 — Geometria e armadura longitudinal</string>
+    </property>
+    <layout class="QGridLayout" name="layout_geom" columnstretch="0,1,0,1">
+     <property name="horizontalSpacing">
+      <number>8</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>bw (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Cobrimento (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>fck (MPa)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="bw"/>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="cobrimento"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="fck"/>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>h (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>d (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>Estribo φ (mm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="Altura"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="alturautil"/>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="estribo"/>
+     </item>
+     <item row="3" column="0" colspan="4">
+      <widget class="QPushButton" name="armlong">
+       <property name="text">
+        <string>Calcular armadura longitudinal</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>As (cm²)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>Kc</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_21">
+       <property name="text">
+        <string>Bx = x/d</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="longpositiva">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLineEdit" name="Kc_mostrar">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="Bx_mostrar">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="4">
+      <widget class="QLineEdit" name="dominio">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Domínio / tipo de armadura (aparece após calcular)</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="gb_barras">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>665</y>
+      <width>480</width>
+      <height>95</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>4 — Número de barras (armadura simples)</string>
+    </property>
+    <layout class="QGridLayout" name="layout_barras" columnstretch="0,1,0,1">
+     <property name="horizontalSpacing">
+      <number>8</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>Barras φ (mm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_19">
+       <property name="text">
+        <string>Nº de barras</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QComboBox" name="barra">
+       <item>
+        <property name="text">
+         <string>6.3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12.5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>20</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="armadura">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" colspan="2">
+      <widget class="QPushButton" name="numero_barras">
+       <property name="text">
+        <string>Calcular nº de barras</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_37">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>10</y>
+      <width>621</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="recursos.qrc">:/imagens/imagens/Captura de tela 2026-05-20 113556.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gb_espacamentos">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>520</y>
+      <width>980</width>
+      <height>220</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>5 — Espaçamentos e detalhamento da ST</string>
+    </property>
+    <layout class="QGridLayout" name="layout_espac">
+     <property name="horizontalSpacing">
+      <number>8</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="label_32">
+       <property name="text">
+        <string>Espaçamentos iniciais (editáveis)</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>subtitulo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QPushButton" name="espacamentos">
+       <property name="text">
+        <string>Calcular espaçamentos</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_36">
+       <property name="toolTip">
+        <string>Espaçamento horizontal</string>
+       </property>
+       <property name="text">
+        <string>ah (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="es_horizontal">
+       <property name="papel" stdset="0">
+        <string>editavel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_34">
+       <property name="toolTip">
+        <string>Espaçamento vertical</string>
+       </property>
+       <property name="text">
+        <string>av (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="es_vertical">
+       <property name="papel" stdset="0">
+        <string>editavel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2" colspan="2">
+      <widget class="QLabel" name="label_35">
+       <property name="text">
+        <string>Espaçamentos finais (calculados)</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>subtitulo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="label_31">
+       <property name="toolTip">
+        <string>Espaçamento horizontal</string>
+       </property>
+       <property name="text">
+        <string>ah (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="es_horizontal_final">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLabel" name="label_33">
+       <property name="toolTip">
+        <string>Espaçamento vertical</string>
+       </property>
+       <property name="text">
+        <string>av (cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLineEdit" name="es_vertical_final">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4" colspan="2">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Seção transversal (ST)</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>subtitulo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4" colspan="2">
+      <widget class="QPushButton" name="desenhost">
+       <property name="text">
+        <string>Detalhar seção transversal</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4" colspan="2">
+      <widget class="QLineEdit" name="verificar_cg">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="placeholderText">
+        <string>Verificação do CG</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="gb_dupla">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>768</y>
+      <width>1480</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>6 — Armadura dupla (somente se indicado no bloco 3)</string>
+    </property>
+    <layout class="QGridLayout" name="layout_dupla">
+     <property name="horizontalSpacing">
+      <number>8</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>6</number>
+     </property>
+     <item row="0" column="0" colspan="3">
+      <widget class="QPushButton" name="arm_dupla">
+       <property name="text">
+        <string>Calcular armadura dupla</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_24">
+       <property name="text">
+        <string>Kslim</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>Kclim</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QLabel" name="label_28">
+       <property name="text">
+        <string>Md2 (kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLabel" name="label_29">
+       <property name="text">
+        <string>Md1 (kN.cm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_25">
+       <property name="text">
+        <string>Ks'</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string>As' (cm²)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="5">
+      <widget class="QLabel" name="label_27">
+       <property name="text">
+        <string>As (cm²)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLineEdit" name="kclim">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="kslinha">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="M1d_linha">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="kslim">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="6">
+      <widget class="QLineEdit" name="As_dupla_linha">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="7">
+      <widget class="Line" name="line_dupla">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="5">
+      <widget class="QLineEdit" name="As_dupla">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="4">
+      <widget class="QLineEdit" name="M2d_linha">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="7">
+      <widget class="QLabel" name="label_30">
+       <property name="text">
+        <string>Escolha os diâmetros e calcule o nº de barras</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>subtitulo</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="3">
+      <widget class="QLabel" name="lbl_nas">
+       <property name="text">
+        <string>n° barras As</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QLabel" name="lbl_naslinha">
+       <property name="text">
+        <string>n° barras As'</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="lbl_phi_as">
+       <property name="text">
+        <string>φ As (mm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="barra_As">
+       <item>
+        <property name="text">
+         <string>6.3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12.5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>20</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="lbl_phi_aslinha">
+       <property name="text">
+        <string>φ As' (mm)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QComboBox" name="barra_Aslinha">
+       <item>
+        <property name="text">
+         <string>6.3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12.5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="5" column="4">
+      <widget class="QLineEdit" name="nAs">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2" rowspan="2">
+      <widget class="QPushButton" name="calcular_nbarrasdupla">
+       <property name="text">
+        <string>Calcular nº de barras  →</string>
+       </property>
+       <property name="papel" stdset="0">
+        <string>acao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="4">
+      <widget class="QLineEdit" name="nAslinha">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="papel" stdset="0">
+        <string>saida</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1500</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
+ <connections/>
+</ui>

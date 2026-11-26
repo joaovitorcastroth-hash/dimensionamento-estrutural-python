@@ -15,7 +15,8 @@ class VIGASorganizadoIA(QMainWindow):
     def __init__(self):
         super().__init__()
         # achar o arquivo salvo
-        uic.loadUi('VIGASorganizadoIA.ui', self)
+        uic.loadUi('VIGASorganizadoIA_v2.ui', self)
+        #uic.loadUi('VIGASorganizadoIA.ui', self)
         # conectar o botão clique com o método escolher viga
         self.botaook.clicked.connect(self.escolherviga)
         # conectar o botão clique com o método  momento viga
@@ -34,7 +35,7 @@ class VIGASorganizadoIA(QMainWindow):
         self.arm_dupla.clicked.connect(self.campos_arm_dupla)
         # numero barras arm dupla
         self.calcular_nbarrasdupla.clicked.connect(self.mostrar_numero_barras_dupla)
-
+        self.configurar_estados()
         # teste
         self.comprimento.setText("7")
         self.bw.setText("20")
@@ -43,7 +44,31 @@ class VIGASorganizadoIA(QMainWindow):
         self.estribo.setText("5")
         self.inserirmomento.setText("15700")  # era 10000
 
-    # apertar botao ok e escolher viga
+    def configurar_estados(self):
+        # Bloco 2: habilita só o que faz sentido para "Inserir" ou "Calcular"
+        self.tipomomento.currentIndexChanged.connect(self.atualizar_bloco_momento)
+        self.atualizar_bloco_momento()
+
+        # Bloco 6: começa desabilitado; libere quando o bloco 3 indicar armadura dupla
+        self.gb_dupla.setEnabled(False)
+
+        # Mensagem de apoio na barra de status
+        self.statusBar().showMessage("Siga os blocos de 1 a 6. Campos cinza são calculados.")
+
+    def atualizar_bloco_momento(self):
+        inserir = self.tipomomento.currentText() == "Inserir"
+        self.inserirmomento.setEnabled(inserir)
+        self.distribuida.setEnabled(not inserir)
+        self.concentrada.setEnabled(not inserir)
+
+    def liberar_armadura_dupla(self, precisa_dupla):
+        # Armadura dupla: libera o bloco 6 e fecha o bloco 4 (que é só para armadura simples).
+        # Armadura simples: o contrário.
+        precisa_dupla = bool(precisa_dupla)
+        self.gb_dupla.setEnabled(precisa_dupla)
+        self.gb_barras.setEnabled(not precisa_dupla)
+        self.gb_espacamentos.setEnabled(not precisa_dupla)
+
     def escolherviga(self):
         self.infos_basicasviga()
         # pegar tipo de viga
@@ -552,8 +577,9 @@ class VIGASorganizadoIA(QMainWindow):
         bx = self.achar_bx_por_kc(kc, self.fckc)
         if bx is None:
             self.longpositiva.setText(str(f"Armadura dupla necessaria"))
+            self.liberar_armadura_dupla(True)
             return
-
+        self.liberar_armadura_dupla(False)
         As = self.calc_armlong()
         self.longpositiva.setText(str(f"{As:.3f}"))
 
